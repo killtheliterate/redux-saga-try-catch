@@ -4,12 +4,36 @@
   "description": "Saga utilities",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
+  "jest": {
+    "transform": {
+      "\\.(ts)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts}"
+    ],
+    "coveragePathIgnorePatterns": []
+  },
   "dependencies": {
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/redux-saga": "^0.10.5",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^2.9.1"
   }
 }

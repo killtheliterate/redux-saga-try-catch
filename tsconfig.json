@@ -12,6 +12,7 @@
 
   "compilerOptions": {
     "baseUrl": "./",
+    "downlevelIteration": true,
     "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
