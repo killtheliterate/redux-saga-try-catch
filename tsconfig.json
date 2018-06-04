@@ -1,0 +1,38 @@
+{
+
+  "exclude": [
+    "**/*.test.ts",
+    "node_modules"
+  ],
+
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5",
+
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    "plugins": [
+      { "name": "tslint-language-service"}
+    ]
+  }
+}
