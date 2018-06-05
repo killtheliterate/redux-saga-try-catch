@@ -12,6 +12,7 @@
 
   "compilerOptions": {
     "baseUrl": "./",
+    "declaration": true,
     "downlevelIteration": true,
     "jsx": "react",
     "module": "esnext",
@@ -21,7 +22,6 @@
     "removeComments": false,
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
 
     "lib": [
       "dom",

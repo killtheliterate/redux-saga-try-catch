@@ -1,9 +1,5 @@
-// import atImport from 'postcss-import'
-// import autoprefixer from 'autoprefixer'
-// import postcss from 'rollup-plugin-postcss'
 // import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
-// import url from 'postcss-url'
 // import commonjs from 'rollup-plugin-commonjs'
 // import path from 'path'
 
@@ -11,10 +7,6 @@ const baseConfig = {
   plugins: [
     // resolve(),
     // commonjs(),
-
-    // alias({
-    //   semantic: 'semantic/dist'
-    // }),
 
     // Make sure this is last
     typescript()
