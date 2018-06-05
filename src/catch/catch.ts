@@ -49,8 +49,7 @@ export const standardAction: SafeSaga<Action> = (saga, io) => {
     try {
       const { payload, type } = action
 
-      yield call(saga, io, { payload, type })
-      // yield* saga(io, { payload, type })
+      yield* saga(io, { payload, type })
     } catch (err) {
       yield call(stdout, `${saga.name}`, err)
     }
@@ -65,12 +64,11 @@ export const deferredAction: SafeSaga<DeferredAction> = (saga, io) => {
     try {
       const { payload, type } = action
 
-      const result = yield call(saga, io, { payload, type })
+      const result = yield* saga(io, { payload, type })
 
       yield call(deferred.success, result)
     } catch (err) {
       yield call(stdout, `${saga.name}`, err)
-
       yield call(deferred.failure, err)
     }
   }
