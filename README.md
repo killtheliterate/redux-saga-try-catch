@@ -1,3 +1,5 @@
+<b>WIP</b>
+
 # redux-saga-catch
 
 A saga utility to reduce flow control boilerplate
@@ -8,14 +10,14 @@ A saga utility to reduce flow control boilerplate
 
 # Use
 
-```javascript
+```es
 import Catch from' redux-saga-catch
 
-function* aSaga(/* etc... */) {
+function* aSaga() {
   yield 'cool'
 }
 
 const aSafeSaga = Catch.standardAction(aSaga)
 
-aSafeSaga(/* etc... */)
+aSafeSaga()
 ```
