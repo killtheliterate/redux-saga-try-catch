@@ -1,22 +1,18 @@
-// import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
-// import commonjs from 'rollup-plugin-commonjs'
-// import path from 'path'
 
 const baseConfig = {
   plugins: [
-    // resolve(),
-    // commonjs(),
 
     // Make sure this is last
     typescript()
   ],
 
-  // input: './test.js',
   input: 'src/index.ts',
 
   external: [
-    'debug'
+    'redux',
+    'redux-saga',
+    'redux-saga/effects'
   ]
 }
 
@@ -45,6 +41,6 @@ const cjsConfig = Object.assign(
 )
 
 export default [
-  esConfig,
-  cjsConfig
+  cjsConfig,
+  esConfig
 ]

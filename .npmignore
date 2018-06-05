@@ -11,6 +11,7 @@ __test__
 .tern-port
 .tmp/
 .tmp/*
+.travis.yml
 Icon?
 Thumbs.db
 ehthumbs.db
