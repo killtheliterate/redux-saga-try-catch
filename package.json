@@ -1,15 +1,15 @@
 {
-  "name": "redux-saga-catch",
+  "name": "redux-saga-try-catch",
   "version": "0.0.1",
   "author": "Garrett Dawson",
   "description": "A saga utility to reduce flow control boilerplate",
-  "homepage": "https://github.com/killtheliterate/redux-saga-catch",
+  "homepage": "https://github.com/killtheliterate/redux-saga-try-catch",
   "license": "MIT",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/cjs/index.d.ts",
   "bugs": {
-    "url": "https://github.com/killtheliterate/redux-saga-catch/issues"
+    "url": "https://github.com/killtheliterate/redux-saga-try-catch/issues"
   },
   "peerdependencies": {
     "redux": "^4.0.0",
@@ -46,7 +46,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/killtheliterate/redux-saga-catch.git"
+    "url": "https://github.com/killtheliterate/redux-saga-try-catch.git"
   },
   "scripts": {
     "build": "rm -rf dist && npx rollup -c",
