@@ -1,10 +1,16 @@
+[![Build Status](https://travis-ci.org/killtheliterate/redux-saga-try-catch.svg?branch=master)](https://travis-ci.org/killtheliterate/redux-saga-try-catch)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![npm version](https://img.shields.io/npm/v/redux-saga-try-catch.svg)](https://www.npmjs.com/package/redux-saga-try-catch)
+
 # redux-saga-catch
 
-A saga utility to reduce flow control boilerplate.
+*includes TypeScript definitions*
+
+A saga utility to reduce flow control boilerplate. See the [tests](https://github.com/killtheliterate/redux-saga-try-catch/blob/master/src/__tests__/catch.test.ts).
 
 # Install
 
-`$ npm install redux-saga-catch`
+`$ npm install redux-saga-try-catch`
 
 # Use
 
