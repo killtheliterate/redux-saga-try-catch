@@ -10,7 +10,7 @@ A saga utility to reduce flow control boilerplate.
 
 [FSA](https://github.com/redux-utilities/flux-standard-action)
 
-```es
+```javascript
 import Catch from 'redux-saga-try-catch'
 
 const io = {
@@ -28,7 +28,7 @@ aSafeSaga({ type: 'AN_ACTION' }) // logs the error
 
 [FSA with meta](https://github.com/redux-utilities/flux-standard-action#meta)
 
-```es
+```javascript
 import Catch from 'redux-saga-try-catch'
 
 const io = {
@@ -45,8 +45,8 @@ const action = {
   type: 'AN_ACTION',
   meta: {
     deferred: { 
-      success: cb, // a success callback - could be `resolve`
-      failure: cb  // a failure callback - could be `reject`
+      success: console.log, // a success callback - could be `resolve`
+      failure: console.err  // a failure callback - could be `reject`
     }
   }
 }
