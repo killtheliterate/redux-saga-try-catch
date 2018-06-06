@@ -3,7 +3,7 @@ import { call } from 'redux-saga/effects'
 
 // ---------------------------------------------------------------------------
 
-export interface Action {
+export type Action = {
   type: string
   error?: boolean
   payload?: any
@@ -24,31 +24,26 @@ export type DeferredAction = {
   }
 }
 
-export type Saga = (io: IO, action: Action) => SagaIterator
-
-export type SafeSaga<T> = {
-  (saga: Saga, io: IO): (action: T) => SagaIterator
-}
-
-export type EffectMiddlewares = {
-  [index: string]: (...args: any[]) => void
-}
-
 export type StdOut = {
-  stdout: (...args: any[]) => void
+  stdout: (...args: string[]) => void
 }
 
-export type IO = EffectMiddlewares & StdOut
+export type Saga<T, A> = (io: T, action: A) => SagaIterator
 
 // ---------------------------------------------------------------------------
 
-export const standardAction: SafeSaga<Action> = (saga, io) => {
-  return function* withCatch (action) {
+// @TODO: Figure out why inferred type for `withCatch` won't transpile
+//
+// `tsc` produces the correct type, but webpack and rollup both create an
+// invalid import statement as part of the type signature.
+export function standardAction<T extends StdOut> (saga: Saga<T & StdOut, Action>, io: T & StdOut) {
+  return function* withCatch (action: Action): IterableIterator<any> {
     const { stdout } = io
 
     try {
       const { payload, type } = action
 
+      // Using `yield*` as it requires less plumbing to test then `call`
       yield* saga(io, { payload, type })
     } catch (err) {
       yield call(stdout, `${saga.name}`, err)
@@ -56,8 +51,8 @@ export const standardAction: SafeSaga<Action> = (saga, io) => {
   }
 }
 
-export const deferredAction: SafeSaga<DeferredAction> = (saga, io) => {
-  return function* withCatch (action) {
+export function deferredAction<T extends StdOut> (saga: Saga<T, Action>, io: T) {
+  return function* withCatch (action: DeferredAction): IterableIterator<any> {
     const { stdout } = io
     const { meta: { deferred } } = action
 

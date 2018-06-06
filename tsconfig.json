@@ -1,23 +1,17 @@
 {
-
   "exclude": [
     "**/*.test.ts",
     "node_modules"
   ],
 
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
+  "include": [ "src/**/*.ts" ],
 
   "compilerOptions": {
     "baseUrl": "./",
     "declaration": true,
     "downlevelIteration": true,
-    "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
-    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
     "sourceMap": true,

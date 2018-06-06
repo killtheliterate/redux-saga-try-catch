@@ -11,16 +11,20 @@
   "bugs": {
     "url": "https://github.com/killtheliterate/redux-saga-try-catch/issues"
   },
+  "dependencies": {},
   "peerdependencies": {
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
-    "@types/redux-saga": "^0.10.5",
     "jest": "^23.1.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "rollup": "^0.59.4",
     "rollup-plugin-typescript2": "^0.14.0",
     "ts-jest": "^22.4.6",
+    "ts-loader": "^4.3.1",
     "tslint": "^5.10.0",
     "tslint-config-standard": "^7.0.0",
     "tslint-language-service": "^0.9.9",
@@ -50,7 +54,9 @@
   },
   "scripts": {
     "build": "rm -rf dist && npx rollup -c",
-    "prepublish": "npm run build",
-    "test": "jest"
+    "build:wp": "webpack --config webpack.config.js",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "watch": "npx rollup -c --watch"
   }
 }
