@@ -1,11 +1,7 @@
 import typescript from 'rollup-plugin-typescript2'
 
 const baseConfig = {
-  plugins: [
-
-    // Make sure this is last
-    typescript()
-  ],
+  plugins: [ typescript() ],
 
   input: 'src/index.ts',
 
