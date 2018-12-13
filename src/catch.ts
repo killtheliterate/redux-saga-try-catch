@@ -36,30 +36,30 @@ export type Saga<T, A> = (io: T, action: A) => SagaIterator
 //
 // `tsc` produces the correct type, but webpack and rollup both create an
 // invalid import statement as part of the type signature.
-export function standardAction<T extends StdOut> (saga: Saga<T & StdOut, Action>, io: T & StdOut) {
-  return function* withCatch (action: Action): IterableIterator<any> {
+export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
+  return function* withCatch (action: A & Action): IterableIterator<any> {
     const { stdout } = io
 
     try {
-      const { payload, type } = action
-
       // Using `yield*` as it requires less plumbing to test then `call`
-      yield* saga(io, { payload, type })
+      yield* saga(io, action)
     } catch (err) {
       yield call(stdout, `${saga.name}`, err)
     }
   }
 }
 
-export function deferredAction<T extends StdOut> (saga: Saga<T, Action>, io: T) {
-  return function* withCatch (action: DeferredAction): IterableIterator<any> {
+export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
+  return function* withCatch (action: A & DeferredAction): IterableIterator<any> {
     const { stdout } = io
     const { meta: { deferred } } = action
 
     try {
-      const { payload, type } = action
+      // Shaking out `meta`
+      const { meta, ...rest } = action as any
 
-      const result = yield* saga(io, { payload, type })
+      // Using `yield*` as it requires less plumbing to test then `call`
+      const result = yield* saga(io, rest)
 
       yield call(deferred.success, result)
     } catch (err) {
