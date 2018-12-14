@@ -25,7 +25,7 @@ describe('Catch.standardAction()', () => {
   it('catches if the delegate saga throws', () => {
     const IO = { stdout: () => undefined }
 
-    function* aSaga (_io: typeof IO, _action: AnyAction) {
+    function* aSaga (_io: typeof IO, _action: AnyAction): any {
       throw new Error('oops')
     }
 
@@ -87,7 +87,7 @@ describe('Catch.deferredAction()', () => {
       }
     }
 
-    function* aSaga (_io: typeof IO, _action: AnyAction) {
+    function* aSaga (_io: typeof IO, _action: AnyAction): any {
       throw new Error('welp...')
     }
 

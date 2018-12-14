@@ -1,6 +1,5 @@
 {
   "exclude": [
-    "**/*.test.ts",
     "node_modules"
   ],
 
@@ -10,6 +9,7 @@
     "baseUrl": "./",
     "declaration": true,
     "downlevelIteration": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "noUnusedParameters": true,

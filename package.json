@@ -17,31 +17,20 @@
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.0.0",
-    "jest": "^23.1.0",
-    "redux": "^4.0.0",
-    "redux-saga": "^0.16.0",
-    "rollup": "^0.65.0",
+    "@types/jest": "^23.3.10",
+    "jest": "^23.6.0",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
+    "rollup": "^0.65.2",
     "rollup-plugin-typescript2": "^0.16.1",
-    "ts-jest": "^23.0.0",
-    "tslint": "^5.10.0",
-    "tslint-config-standard": "^7.0.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^7.1.0",
     "tslint-language-service": "^0.9.9",
     "typescript": "^3.2.2"
   },
   "jest": {
-    "transform": {
-      "\\.(ts)$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts}"
-    ],
-    "coveragePathIgnorePatterns": []
+    "preset": "ts-jest"
   },
   "keywords": [
     "redux-saga",
@@ -53,11 +42,10 @@
   },
   "scripts": {
     "build": "rm -rf dist && npx rollup -c",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "build:watch": "npx rollup -c --watch",
     "prepublishOnly": "npm run build",
-    "prepush": "npm run lint",
-    "pretest": "npm run build",
+    "prepush": "npm run util:lint",
     "test": "jest",
-    "watch": "npx rollup -c --watch"
+    "util:lint": "tslint -p tsconfig.json -c tslint.json"
   }
 }
