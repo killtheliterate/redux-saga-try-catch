@@ -1,7 +1,16 @@
 import typescript from 'rollup-plugin-typescript2'
 
 const baseConfig = {
-  plugins: [ typescript() ],
+  plugins: [
+    typescript({
+      tsconfigOverride: {
+        exclude: [
+          '**/*.test.ts',
+          'node_modules'
+        ]
+      }
+    })
+  ],
 
   input: 'src/index.ts',
 
