@@ -1,108 +1,104 @@
+import { AnyAction } from 'redux'
 import { call } from 'redux-saga/effects'
 
 // ---------------------------------------------------------------------------
 
-import {
-  deferredAction,
-  standardAction
-} from '../catch'
+import { deferredAction, standardAction } from '../catch'
 
 // ---------------------------------------------------------------------------
 
-describe('Catch', () => {
-  describe('Catch.standardAction()', () => {
-    it('yields to the passed generator', () => {
-      const io = { stdout: () => undefined }
+describe('Catch.standardAction()', () => {
+  it('yields to the passed generator', () => {
+    const IO = { stdout: () => undefined }
 
-      function* aSaga (io, action) {
-        return yield call(io.stdout, action.type)
-      }
+    function* aSaga (io: typeof IO, action: AnyAction): IterableIterator<any> {
+      return yield call(io.stdout, action.type)
+    }
 
-      const iterator = standardAction(aSaga, io)({ type: 'AN_ACTION' })
+    const iterator: any = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
 
-      expect(iterator.next().value).toEqual(
-        call(io.stdout, 'AN_ACTION')
-      )
-    })
-
-    it('catches if the delegate saga throws', () => {
-      const io = { stdout: () => undefined }
-
-      function* aSaga (io, action) {
-        throw new Error('oops')
-      }
-
-      const iterator = standardAction(aSaga, io)({ type: 'AN_ACTION' })
-
-      expect(iterator.next().value).toEqual(
-        call(io.stdout, 'aSaga', Error('oops'))
-      )
-    })
+    expect(iterator.next().value).toEqual(
+      call(IO.stdout, 'AN_ACTION')
+    )
   })
 
-  describe('Catch.deferredAction()', () => {
-    it('yields to the passed generator', () => {
-      const io = {
-        stdout: () => undefined,
-        echo: msg => msg
-      }
+  it('catches if the delegate saga throws', () => {
+    const IO = { stdout: () => undefined }
 
-      const action = {
-        type: 'AN_ACTION',
-        meta: {
-          deferred: {
-            success: jest.fn(),
-            failure: jest.fn()
-          }
+    function* aSaga (_io: typeof IO, _action: AnyAction) {
+      throw new Error('oops')
+    }
+
+    const iterator: any = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
+
+    expect(iterator.next().value).toEqual(
+      call(IO.stdout, 'aSaga', Error('oops'))
+    )
+  })
+})
+
+describe('Catch.deferredAction()', () => {
+  it('yields to the passed generator', () => {
+    const IO = {
+      stdout: () => undefined,
+      echo: (msg: any) => msg
+    }
+
+    const action = {
+      type: 'AN_ACTION',
+      meta: {
+        deferred: {
+          success: jest.fn(),
+          failure: jest.fn()
         }
       }
+    }
 
-      function* aSaga (io, action) {
-        const result = yield call(io.echo, 'A message')
+    function* aSaga (io: typeof IO, _action: AnyAction): any {
+      const result = yield call(io.echo, 'A message')
 
-        return result
-      }
+      return result
+    }
 
-      const iterator = deferredAction(aSaga, io)(action)
+    const iterator: any = deferredAction(aSaga, IO)(action)
 
-      expect(iterator.next().value).toEqual(
-        call(io.echo, 'A message')
-      )
+    expect(iterator.next().value).toEqual(
+      call(IO.echo, 'A message')
+    )
 
-      expect(iterator.next('A message').value).toEqual(
-        call(action.meta.deferred.success, 'A message')
-      )
-    })
+    expect(iterator.next('A message').value).toEqual(
+      call(action.meta.deferred.success, 'A message')
+    )
+  })
 
-    it('catches if the delegate saga throws', () => {
-      const io = {
-        stdout: () => undefined,
-        echo: msg => msg
-      }
+  it('catches if the delegate saga throws', () => {
+    const IO = {
+      stdout: () => undefined,
+      echo: (msg: any) => msg
+    }
 
-      const action = {
-        type: 'AN_ACTION',
-        meta: {
-          deferred: {
-            success: jest.fn(),
-            failure: jest.fn()
-          }
+    const action = {
+      type: 'AN_ACTION',
+      meta: {
+        deferred: {
+          success: jest.fn(),
+          failure: jest.fn()
         }
       }
+    }
 
-      function* aSaga (io, action) {
-        throw new Error('welp...')
-      }
+    function* aSaga (_io: typeof IO, _action: AnyAction) {
+      throw new Error('welp...')
+    }
 
-      const iterator = deferredAction(aSaga, io)(action)
+    const iterator: any = deferredAction(aSaga, IO)(action)
 
-      expect(iterator.next().value).toEqual(
-        call(io.stdout, 'aSaga', Error('welp...'))
-      )
+    expect(iterator.next().value).toEqual(
+      call(IO.stdout, 'aSaga', Error('welp...'))
+    )
 
-      expect(iterator.next().value).toEqual(
-        call(action.meta.deferred.failure, Error('welp...'))
-      )
-    })
+    expect(iterator.next().value).toEqual(
+      call(action.meta.deferred.failure, Error('welp...'))
+    )
   })
 })
