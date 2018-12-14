@@ -32,12 +32,8 @@ export type Saga<T, A> = (io: T, action: A) => SagaIterator
 
 // ---------------------------------------------------------------------------
 
-// @TODO: Figure out why inferred type for `withCatch` won't transpile
-//
-// `tsc` produces the correct type, but webpack and rollup both create an
-// invalid import statement as part of the type signature.
 export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
-  return function* withCatch (action: A & Action): IterableIterator<any> {
+  return function* withCatch (action: A & Action) {
     const { stdout } = io
 
     try {
@@ -50,7 +46,7 @@ export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
 }
 
 export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
-  return function* withCatch (action: A & DeferredAction): IterableIterator<any> {
+  return function* withCatch (action: A & DeferredAction) {
     const { stdout } = io
     const { meta: { deferred } } = action
 
