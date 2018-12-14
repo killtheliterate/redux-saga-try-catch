@@ -28,7 +28,7 @@
     },
 
     "plugins": [
-      { "name": "tslint-language-service"}
+      { "name": "typescript-tslint-plugin"}
     ]
   }
 }
