@@ -9,7 +9,7 @@ import { deferredAction, standardAction } from '../catch'
 
 describe('Catch.standardAction()', () => {
   it('yields to the passed generator', () => {
-    const IO = { stdout: () => undefined }
+    const IO = { stdout: (..._args: any[]) => undefined }
 
     function* aSaga (io: typeof IO, action: AnyAction): IterableIterator<any> {
       return yield call(io.stdout, action.type)
@@ -23,7 +23,7 @@ describe('Catch.standardAction()', () => {
   })
 
   it('catches if the delegate saga throws', () => {
-    const IO = { stdout: () => undefined }
+    const IO = { stdout: (..._args: any[]) => undefined }
 
     function* aSaga (_io: typeof IO, _action: AnyAction): any {
       throw new Error('oops')
@@ -73,7 +73,7 @@ describe('Catch.deferredAction()', () => {
 
   it('catches if the delegate saga throws', () => {
     const IO = {
-      stdout: () => undefined,
+      stdout: (..._args: any[]) => undefined,
       echo: (msg: any) => msg
     }
 
