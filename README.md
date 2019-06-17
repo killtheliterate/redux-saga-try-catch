@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/killtheliterate/redux-saga-try-catch.svg?branch=master)](https://travis-ci.org/killtheliterate/redux-saga-try-catch)
-[![Greenkeeper badge](https://badges.greenkeeper.io/killtheliterate/redux-saga-try-catch.svg)](https://greenkeeper.io/)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![npm version](https://img.shields.io/npm/v/redux-saga-try-catch.svg)](https://www.npmjs.com/package/redux-saga-try-catch)
 
