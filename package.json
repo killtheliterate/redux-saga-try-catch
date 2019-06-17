@@ -13,8 +13,8 @@
   },
   "dependencies": {},
   "peerdependencies": {
-    "redux": "^4.0.0",
-    "redux-saga": "^0.16.0"
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
