@@ -22,7 +22,7 @@
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
     "rollup": "^1.21.2",
-    "rollup-plugin-typescript2": "^0.21.2",
+    "rollup-plugin-typescript2": "^0.24.1",
     "ts-jest": "^24.0.2",
     "tslint": "^5.20.0",
     "tslint-config-standard": "^8.0.1",
