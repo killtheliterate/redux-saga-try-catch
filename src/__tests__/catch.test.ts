@@ -11,27 +11,36 @@ describe('Catch.standardAction()', () => {
   it('yields to the passed generator', () => {
     const IO = { stdout: (..._args: any[]) => undefined }
 
-    function* aSaga (io: typeof IO, action: AnyAction): IterableIterator<any> {
+    function* aSaga (io: typeof IO, action: AnyAction) {
       return yield call(io.stdout, action.type)
     }
 
-    const iterator: any = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
+    const iterator = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
 
     expect(iterator.next().value).toEqual(
-      call(IO.stdout, 'AN_ACTION')
+      call(aSaga, IO, { type: 'AN_ACTION' })
     )
   })
 
   it('catches if the delegate saga throws', () => {
     const IO = { stdout: (..._args: any[]) => undefined }
 
-    function* aSaga (_io: typeof IO, _action: AnyAction): any {
+    function* aSaga (_io: typeof IO, _action: AnyAction) {
       throw new Error('oops')
     }
 
-    const iterator: any = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
+    const iterator = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
+    const { done: doneA, value: valueA } = iterator.next()
 
-    expect(iterator.next().value).toEqual(
+    expect(doneA).toEqual(false)
+
+    expect(valueA).toEqual(
+      call(aSaga, IO, { type: 'AN_ACTION' })
+    )
+
+    const { value: valueB } = iterator.throw(Error('oops'))
+
+    expect(valueB).toEqual(
       call(IO.stdout, 'aSaga', Error('oops'))
     )
   })
@@ -54,16 +63,16 @@ describe('Catch.deferredAction()', () => {
       }
     }
 
-    function* aSaga (io: typeof IO, _action: AnyAction): any {
+    function* aSaga (io: typeof IO, _action: AnyAction) {
       const result = yield call(io.echo, 'A message')
 
       return result
     }
 
-    const iterator: any = deferredAction(aSaga, IO)(action)
+    const iterator = deferredAction(aSaga, IO)(action)
 
     expect(iterator.next().value).toEqual(
-      call(IO.echo, 'A message')
+      call(aSaga, IO, { type: 'AN_ACTION' })
     )
 
     expect(iterator.next('A message').value).toEqual(
@@ -87,13 +96,17 @@ describe('Catch.deferredAction()', () => {
       }
     }
 
-    function* aSaga (_io: typeof IO, _action: AnyAction): any {
+    function* aSaga (_io: typeof IO, _action: AnyAction) {
       throw new Error('welp...')
     }
 
-    const iterator: any = deferredAction(aSaga, IO)(action)
+    const iterator = deferredAction(aSaga, IO)(action)
 
     expect(iterator.next().value).toEqual(
+      call(aSaga, IO, { type: 'AN_ACTION' })
+    )
+
+    expect(iterator.throw(Error('welp...')).value).toEqual(
       call(IO.stdout, 'aSaga', Error('welp...'))
     )
 

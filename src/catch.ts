@@ -3,42 +3,38 @@ import { call } from 'redux-saga/effects'
 
 // ---------------------------------------------------------------------------
 
-export type Action = {
+export type StandardAction = {
   type: string
   error?: boolean
   payload?: any
-
-  meta?: Pick<object, Exclude<keyof object, 'deferred'>>
+  meta?: {[key: string]: any}
 }
 
 export type DeferredAction = {
   type: string
-  error?: boolean
-  payload?: any
-
-  meta: {
+  meta: {[key: string]: any} & {
     deferred: {
       failure: (...args: any[]) => void
       success: (...args: any[]) => void
     }
   }
+
+  error?: boolean
+  payload?: any
 }
 
-export type StdOut = {
-  stdout: (...args: string[]) => void
-}
+export type StdOut = { stdout: (...args: string[]) => void }
 
 export type Saga<T, A> = (io: T, action: A) => SagaIterator
 
 // ---------------------------------------------------------------------------
 
 export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
-  return function* withCatch (action: A & Action) {
+  return function* withCatch (action: A & StandardAction) {
     const { stdout } = io
 
     try {
-      // Using `yield*` as it requires less plumbing to test then `call`
-      yield* saga(io, action)
+      yield call(saga, io, action)
     } catch (err) {
       yield call(stdout, `${saga.name}`, err)
     }
@@ -52,10 +48,9 @@ export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
 
     try {
       // Shaking out `meta`
-      const { meta, ...rest } = action as any
+      const { meta, ...rest } = action
 
-      // Using `yield*` as it requires less plumbing to test then `call`
-      const result = yield* saga(io, rest)
+      const result = yield call(saga, io, rest as A)
 
       yield call(deferred.success, result)
     } catch (err) {
