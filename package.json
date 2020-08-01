@@ -17,7 +17,7 @@
     "redux-saga": "^1.0.3"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.8",
     "jest": "^24.9.0",
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
