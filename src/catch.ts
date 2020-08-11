@@ -1,18 +1,20 @@
 import { SagaIterator } from 'redux-saga'
 import { call } from 'redux-saga/effects'
+import { isEmpty } from 'ramda'
 
 // ---------------------------------------------------------------------------
 
 export type StandardAction = {
   type: string
+
   error?: boolean
   payload?: any
-  meta?: {[key: string]: any}
+  meta?: Record<string, unknown>
 }
 
 export type DeferredAction = {
   type: string
-  meta: {[key: string]: any} & {
+  meta: Record<string, unknown> & {
     deferred: {
       failure: (...args: any[]) => void
       success: (...args: any[]) => void
@@ -26,6 +28,10 @@ export type DeferredAction = {
 export type StdOut = { stdout: (...args: string[]) => void }
 
 export type Saga<T, A> = (io: T, action: A) => SagaIterator
+
+export function isNotEmpty<T> (value: T): value is NonNullable<T> {
+  return !isEmpty(value)
+}
 
 // ---------------------------------------------------------------------------
 
@@ -44,13 +50,18 @@ export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
 export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
   return function* withCatch (action: A & DeferredAction) {
     const { stdout } = io
-    const { meta: { deferred } } = action
+    const { meta: { deferred, ...restMeta }, ...rest } = action
+
+    let payload = { ...rest }
+    if (isNotEmpty(restMeta)) {
+      payload = {
+        ...rest,
+        meta: restMeta
+      }
+    }
 
     try {
-      // Shaking out `meta`
-      const { meta, ...rest } = action
-
-      const result = yield call(saga, io, rest as A)
+      const result = yield call(saga, io, payload as A)
 
       yield call(deferred.success, result)
     } catch (err) {
