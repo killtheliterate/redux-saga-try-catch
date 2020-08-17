@@ -114,4 +114,45 @@ describe('Catch.deferredAction()', () => {
       call(action.meta.deferred.failure, Error('welp...'))
     )
   })
+
+  it('passes the rest of meta', () => {
+    const IO = {
+      stdout: (..._args: any[]) => undefined,
+      echo: (msg: any) => msg
+    }
+
+    const action = {
+      type: 'AN_ACTION',
+      meta: {
+        foobat: 'hey',
+        deferred: {
+          success: jest.fn(),
+          failure: jest.fn()
+        }
+      }
+    }
+
+    function* aSaga (io: typeof IO, _action: AnyAction) {
+      const result = yield call(io.echo, 'A message')
+
+      return result
+    }
+
+    const iterator = deferredAction(aSaga, IO)(action)
+
+    expect(iterator.next().value).toEqual(
+      call(
+        aSaga,
+        IO,
+        {
+          type: 'AN_ACTION',
+          meta:  { foobat: 'hey' }
+        }
+      )
+    )
+
+    expect(iterator.next('A message').value).toEqual(
+      call(action.meta.deferred.success, 'A message')
+    )
+  })
 })
