@@ -1,4 +1,4 @@
-name: Test
+name: Test & Publish
 
 on:
   pull_request:
@@ -36,3 +36,15 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run util:lint
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [test, lint]
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
