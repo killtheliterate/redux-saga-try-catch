@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Test
+        run: npm run test
+
+  release:
+    needs: test
+    steps:
+      - uses: actions/checkout@master
+
+        # you'll need to add an `id` in order to access output variables
+      - uses: codfish/semantic-release-action@master
+        id: semantic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: echo ${{ steps.semantic.outputs.release-version }}
+
+      - run: echo "$OUTPUTS"
+        env:
+          OUTPUTS: ${{ toJson(steps.semantic.outputs) }}
+
+      - uses: codfish/some-other-action@master
+        with:
+          release-version: ${{ steps.semantic.outputs.release-version }}
