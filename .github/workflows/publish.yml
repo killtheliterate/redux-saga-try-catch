@@ -40,7 +40,3 @@ jobs:
       - run: echo "$OUTPUTS"
         env:
           OUTPUTS: ${{ toJson(steps.semantic.outputs) }}
-
-      - uses: codfish/some-other-action@master
-        with:
-          release-version: ${{ steps.semantic.outputs.release-version }}
