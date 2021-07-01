@@ -1,18 +1,25 @@
 import { AnyAction } from 'redux'
-import { call } from 'redux-saga/effects'
+import { call } from 'typed-redux-saga'
 
 // ---------------------------------------------------------------------------
 
-import { deferredAction, standardAction } from '../catch'
+import {
+  deferredAction,
+  standardAction,
+} from '../catch'
 
 // ---------------------------------------------------------------------------
 
-describe('Catch.standardAction()', () => {
+describe.only('Catch.standardAction()', () => {
   it('yields to the passed generator', () => {
-    const IO = { stdout: (..._args: any[]) => undefined }
+    const IO = { stdout: () => undefined }
+
 
     function* aSaga (io: typeof IO, action: AnyAction) {
-      return yield call(io.stdout, action.type)
+      console.log('call', call)
+      yield call(io.stdout, action.type)
+
+      // return yield* call(io.stdout, action.type)
     }
 
     const iterator = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
@@ -23,7 +30,7 @@ describe('Catch.standardAction()', () => {
   })
 
   it('catches if the delegate saga throws', () => {
-    const IO = { stdout: (..._args: any[]) => undefined }
+    const IO = { stdout: () => undefined }
 
     function* aSaga (_io: typeof IO, _action: AnyAction) {
       throw new Error('oops')
@@ -50,7 +57,7 @@ describe('Catch.deferredAction()', () => {
   it('yields to the passed generator', () => {
     const IO = {
       stdout: () => undefined,
-      echo: (msg: any) => msg
+      echo: (msg: string) => msg
     }
 
     const action = {
@@ -64,7 +71,7 @@ describe('Catch.deferredAction()', () => {
     }
 
     function* aSaga (io: typeof IO, _action: AnyAction) {
-      const result = yield call(io.echo, 'A message')
+      const result = yield* call(io.echo, 'A message')
 
       return result
     }
@@ -82,8 +89,8 @@ describe('Catch.deferredAction()', () => {
 
   it('catches if the delegate saga throws', () => {
     const IO = {
-      stdout: (..._args: any[]) => undefined,
-      echo: (msg: any) => msg
+      stdout: () => undefined,
+      echo: (msg: string) => msg
     }
 
     const action = {
@@ -117,8 +124,8 @@ describe('Catch.deferredAction()', () => {
 
   it('passes the rest of meta', () => {
     const IO = {
-      stdout: (..._args: any[]) => undefined,
-      echo: (msg: any) => msg
+      stdout: () => undefined,
+      echo: (msg: string) => msg
     }
 
     const action = {
@@ -133,7 +140,7 @@ describe('Catch.deferredAction()', () => {
     }
 
     function* aSaga (io: typeof IO, _action: AnyAction) {
-      const result = yield call(io.echo, 'A message')
+      const result = yield* call(io.echo, 'A message')
 
       return result
     }

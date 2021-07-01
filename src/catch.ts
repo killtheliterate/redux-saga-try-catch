@@ -1,72 +1,98 @@
-import { SagaIterator } from 'redux-saga'
-import { call } from 'redux-saga/effects'
-import { isEmpty } from 'ramda'
+import { call } from 'typed-redux-saga/macro'
+import { isEmpty } from 'lodash'
 
 // ---------------------------------------------------------------------------
 
 export type StandardAction = {
-  type: string
-
   error?: boolean
-  payload?: any
   meta?: Record<string, unknown>
+  payload?: unknown
+  type: string
 }
 
 export type DeferredAction = {
+  error?: boolean
+  payload?: unknown
   type: string
   meta: Record<string, unknown> & {
     deferred: {
-      failure: (...args: any[]) => void
-      success: (...args: any[]) => void
+      failure: (...args: unknown[]) => void
+      success: (...args: unknown[]) => void
     }
   }
-
-  error?: boolean
-  payload?: any
 }
 
-export type StdOut = { stdout: (...args: string[]) => void }
-
-export type Saga<T, A> = (io: T, action: A) => SagaIterator
-
-export function isNotEmpty<T> (value: T): value is NonNullable<T> {
-  return !isEmpty(value)
-}
+type StdOut = { stdout: (...args: unknown[]) => void }
 
 // ---------------------------------------------------------------------------
 
-export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
-  return function* withCatch (action: A & StandardAction) {
+export function standardAction<
+  IO extends StdOut,
+  Action extends StandardAction,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Saga extends (io: IO, action: Action) => any
+> (
+  fn: Saga,
+  io: IO
+) {
+  return function* withCatch (action: Action) {
+    type SagaArgs = Parameters<Saga>
+
     const { stdout } = io
 
+    const args: unknown = [io, action]
+
     try {
-      yield call(saga, io, action)
+      yield* call(
+        fn,
+        ...args as SagaArgs
+      )
     } catch (err) {
-      yield call(stdout, `${saga.name}`, err)
+      yield* call(stdout, `${fn.name}`, err)
     }
   }
 }
 
-export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
-  return function* withCatch (action: A & DeferredAction) {
+export function deferredAction<
+  IO extends StdOut,
+  Action extends DeferredAction,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Saga extends (io: IO, action: Action) => any,
+> (
+  fn: Saga,
+  io: IO
+) {
+  return function* withCatch (action: Action) {
+    type SagaArgs = Parameters<Saga>
+
     const { stdout } = io
     const { meta: { deferred, ...restMeta }, ...rest } = action
 
-    let payload = { ...rest }
+    let restAction = { ...rest }
+
     if (isNotEmpty(restMeta)) {
-      payload = {
+      restAction = {
         ...rest,
-        meta: restMeta
+        meta: restMeta 
       }
     }
 
-    try {
-      const result = yield call(saga, io, payload as A)
+    const args: unknown = [io, restAction]
 
-      yield call(deferred.success, result)
+    try {
+      const result = yield* call(
+        fn,
+        ...args as SagaArgs
+      )
+
+      yield* call(deferred.success, result)
     } catch (err) {
-      yield call(stdout, `${saga.name}`, err)
-      yield call(deferred.failure, err)
+      yield* call(stdout, `${fn.name}`, err)
+      yield* call(deferred.failure, err)
     }
   }
+}
+
+function isNotEmpty<T> (value: T): value is NonNullable<T> {
+  return !isEmpty(value)
 }
