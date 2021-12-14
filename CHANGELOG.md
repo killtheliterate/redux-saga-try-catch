@@ -1,3 +1,11 @@
+## [2.2.5](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.4...v2.2.5) (2021-12-14)
+
+
+### chore
+
+* **deps-dev:** bump rollup from 2.60.2 to 2.61.1 ([fbb477d](https://github.com/killtheliterate/redux-saga-try-catch/commit/fbb477dea4ee0c6617998c64aaddc481a0d890d3))
+* **deps-dev:** bump tslint from 5.20.1 to 6.1.3 ([ef4c552](https://github.com/killtheliterate/redux-saga-try-catch/commit/ef4c5525b8feb2eef6a33ca01bf883ae645bc08b))
+
 ## [2.2.4](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.3...v2.2.4) (2021-12-13)
 
 
