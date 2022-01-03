@@ -1,3 +1,13 @@
+## [2.2.6](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.5...v2.2.6) (2022-01-03)
+
+
+### chore
+
+* **deps-dev:** bump [@types](https://github.com/types)/jest from 27.0.3 to 27.4.0 ([a496047](https://github.com/killtheliterate/redux-saga-try-catch/commit/a496047aa36093799c4167ba52b65636023bacaf))
+* **deps-dev:** bump [@types](https://github.com/types)/ramda from 0.27.60 to 0.27.62 ([8797246](https://github.com/killtheliterate/redux-saga-try-catch/commit/8797246c50acdbb0b5d668a9e176be4dd4cf5ecb))
+* **deps-dev:** bump rollup from 2.61.1 to 2.62.0 ([410c66f](https://github.com/killtheliterate/redux-saga-try-catch/commit/410c66f2978534c1d7b35035a40eec343054666c))
+* **deps:** bump actions/setup-node from 2.5.0 to 2.5.1 ([012d40e](https://github.com/killtheliterate/redux-saga-try-catch/commit/012d40eb3a44d239f2eacf880b4445ad87a0a16f))
+
 ## [2.2.5](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.4...v2.2.5) (2021-12-14)
 
 
