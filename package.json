@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
-    "@types/ramda": "^0.27.14",
+    "@types/ramda": "^0.28.7",
     "jest": "^24.9.0",
     "ramda": "^0.28.0",
     "redux": "^4.0.5",
