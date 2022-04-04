@@ -1,3 +1,22 @@
+## [2.2.7](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.6...v2.2.7) (2022-04-04)
+
+
+### chore
+
+* **deps-dev:** bump [@types](https://github.com/types)/jest from 27.4.0 to 27.4.1 ([85afd7e](https://github.com/killtheliterate/redux-saga-try-catch/commit/85afd7e851c9212ecfd8dfe8522d33e7b6a82b72))
+* **deps-dev:** bump [@types](https://github.com/types)/ramda from 0.27.62 to 0.27.64 ([10578dd](https://github.com/killtheliterate/redux-saga-try-catch/commit/10578dda80f53149b3725426896fa87212114fe4))
+* **deps-dev:** bump [@types](https://github.com/types)/ramda from 0.27.64 to 0.28.7 ([02859a7](https://github.com/killtheliterate/redux-saga-try-catch/commit/02859a74846bb915738ba93b1f1ce48681b672ec))
+* **deps-dev:** bump ramda from 0.27.1 to 0.28.0 ([b27edcc](https://github.com/killtheliterate/redux-saga-try-catch/commit/b27edcc0858cb29867b9c8a0d55e046ffa4e1484))
+* **deps-dev:** bump rollup from 2.62.0 to 2.66.1 ([90194e0](https://github.com/killtheliterate/redux-saga-try-catch/commit/90194e0e94c653c2ae213f2c2a61776e3868e6f6))
+* **deps-dev:** bump rollup from 2.66.1 to 2.70.1 ([a6c8202](https://github.com/killtheliterate/redux-saga-try-catch/commit/a6c8202b4b13c42798af28cfacd66e1e8c9f75e1))
+* **deps-dev:** bump rollup-plugin-typescript2 from 0.31.1 to 0.31.2 ([462dbe6](https://github.com/killtheliterate/redux-saga-try-catch/commit/462dbe6a60b838110f6cdb89a0cebb31bd89294b))
+* **deps-dev:** bump semantic-release from 18.0.1 to 19.0.2 ([93df4d9](https://github.com/killtheliterate/redux-saga-try-catch/commit/93df4d941287dbb659b0b250fa61ccfdc4ac7c33))
+* **deps-dev:** bump typescript-tslint-plugin from 1.0.1 to 1.0.2 ([53182bb](https://github.com/killtheliterate/redux-saga-try-catch/commit/53182bbee6850e06c1743831a9b2b4e8b34a836f))
+* **deps:** bump actions/checkout from 2.4.0 to 3 ([a2fa53e](https://github.com/killtheliterate/redux-saga-try-catch/commit/a2fa53ee016c01256425925c080e00edca7bcc66))
+* **deps:** bump actions/setup-node from 2.5.1 to 3 ([8fe1db2](https://github.com/killtheliterate/redux-saga-try-catch/commit/8fe1db29d90676708a9b82ee28ca958a0fad5bf1))
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([9cf5d08](https://github.com/killtheliterate/redux-saga-try-catch/commit/9cf5d089e7cbaed794d9b250596b73cc534120d9))
+* **deps:** bump node-fetch from 2.6.6 to 2.6.7 ([ed58f2f](https://github.com/killtheliterate/redux-saga-try-catch/commit/ed58f2f92fbc0bb95496022de04eb7a8334b3415))
+
 ## [2.2.6](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.5...v2.2.6) (2022-01-03)
 
 
