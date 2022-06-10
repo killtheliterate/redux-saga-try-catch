@@ -1,6 +1,6 @@
 import { SagaIterator } from 'redux-saga'
 import { call } from 'redux-saga/effects'
-import { isEmpty } from 'ramda'
+import { isEmpty } from 'lodash/fp'
 
 // ---------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ export type DeferredAction = {
   payload?: any
 }
 
-export type StdOut = { stdout: (...args: string[]) => void }
+export type StdOut = { stdout: (...args: unknown[]) => void }
 
 export type Saga<T, A> = (io: T, action: A) => SagaIterator
 

@@ -1,24 +1,33 @@
-import typescript from 'rollup-plugin-typescript2'
+import babel from '@rollup/plugin-babel'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import resolve from '@rollup/plugin-node-resolve'
 
 const baseConfig = {
   plugins: [
-    typescript({
-      tsconfigOverride: {
-        exclude: [
-          '**/*.test.ts',
-          'node_modules'
-        ]
-      }
+    peerDepsExternal(),
+
+    resolve({ extensions: ['.ts', '.tsx'] }),
+
+    babel({
+      presets: [
+        '@babel/typescript',
+      ],
+      plugins: [
+        'lodash',
+      ],
+      extensions: ['.ts', '.tsx'],
+      babelHelpers: 'bundled',
+      exclude: [
+        '**/*.test.js',
+        '**/*.test.jsx',
+        '**/*.test.ts',
+        '**/*.test.tsx',
+        'node_modules'
+      ]
     })
   ],
 
   input: 'src/index.ts',
-
-  external: [
-    'redux',
-    'redux-saga',
-    'redux-saga/effects'
-  ]
 }
 
 const esConfig = Object.assign(

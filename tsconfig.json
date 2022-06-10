@@ -1,34 +1,28 @@
 {
-  "exclude": [
-    "node_modules"
-  ],
-
-  "include": [ "src/**/*.ts" ],
-
   "compilerOptions": {
     "baseUrl": "./",
-    "declaration": true,
-    "downlevelIteration": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "noUnusedParameters": true,
-    "removeComments": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "target": "es5",
 
     "lib": [
-      "dom",
+      "es5",
       "esnext"
     ],
 
     "paths": {
       "@/*": ["src/*"]
-    },
+    }
+  },
 
-    "plugins": [
-      { "name": "typescript-tslint-plugin"}
-    ]
-  }
+  "exclude": [
+    "node_modules"
+  ],
+
+  "include": [ 
+    "src/**/*.ts" 
+  ]
 }
