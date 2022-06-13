@@ -1,3 +1,28 @@
+## [2.2.8](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.7...v2.2.8) (2022-06-13)
+
+
+### chore
+
+* **deps-dev:** bump [@types](https://github.com/types)/ramda from 0.28.11 to 0.28.13 ([fa33818](https://github.com/killtheliterate/redux-saga-try-catch/commit/fa338186f8abc976161437af56f760ad78b113a5))
+* **deps-dev:** bump [@types](https://github.com/types)/ramda from 0.28.7 to 0.28.11 ([822d787](https://github.com/killtheliterate/redux-saga-try-catch/commit/822d787c73ffa1c8c81e6d564a0776b29316720f))
+* **deps-dev:** bump redux from 4.1.2 to 4.2.0 ([2b8dced](https://github.com/killtheliterate/redux-saga-try-catch/commit/2b8dcedb52c31ac3dbc6cd03fe5d5fa85ddb8fdf))
+* **deps-dev:** bump rollup from 2.70.1 to 2.73.0 ([eb3a87c](https://github.com/killtheliterate/redux-saga-try-catch/commit/eb3a87c9cb6beeb190a1439e3981ba0dd217299a))
+* **deps-dev:** bump rollup from 2.73.0 to 2.75.5 ([aec6be8](https://github.com/killtheliterate/redux-saga-try-catch/commit/aec6be8671aa5ba792e67c5a06c91ab6df16c1cf))
+* **deps-dev:** bump semantic-release from 19.0.2 to 19.0.3 ([c6abbc1](https://github.com/killtheliterate/redux-saga-try-catch/commit/c6abbc1992a483d12e346f5bd87f555ef59d1aff))
+* **deps:** bump github/codeql-action from 1 to 2 ([ec67f72](https://github.com/killtheliterate/redux-saga-try-catch/commit/ec67f720b0e449a0ce11300942fadf4c4c379c84))
+* **deps:** bump semver-regex from 3.1.3 to 3.1.4 ([223e2af](https://github.com/killtheliterate/redux-saga-try-catch/commit/223e2af2dbfb776294767e3888f9e6406af4228b))
+
+
+### ci
+
+* **babel:** build with babel ([2abc748](https://github.com/killtheliterate/redux-saga-try-catch/commit/2abc74886d359725dbfb081283b79285c7a3918f))
+* **babel:** build with babel ([fe98b24](https://github.com/killtheliterate/redux-saga-try-catch/commit/fe98b2473eb97de856da5c9843e968326c9e0b0d))
+
+
+### Breaking changes
+
+* **babel:** babel and types
+
 ## [2.2.7](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.6...v2.2.7) (2022-04-04)
 
 
