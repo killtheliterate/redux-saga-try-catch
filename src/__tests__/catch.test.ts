@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux'
-import { call } from 'redux-saga/effects'
+import { call, CallEffect } from 'redux-saga/effects'
 
 // ---------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ describe('Catch.standardAction()', () => {
   it('yields to the passed generator', () => {
     const IO = { stdout: (..._args: any[]) => undefined }
 
-    function* aSaga (io: typeof IO, action: AnyAction) {
+    function* aSaga (io: typeof IO, action: AnyAction): Generator<CallEffect<undefined>, any, unknown> {
       return yield call(io.stdout, action.type)
     }
 
@@ -63,7 +63,7 @@ describe('Catch.deferredAction()', () => {
       }
     }
 
-    function* aSaga (io: typeof IO, _action: AnyAction) {
+    function* aSaga (io: typeof IO, _action: AnyAction): Generator<CallEffect<unknown>, any, unknown> {
       const result = yield call(io.echo, 'A message')
 
       return result
@@ -132,7 +132,7 @@ describe('Catch.deferredAction()', () => {
       }
     }
 
-    function* aSaga (io: typeof IO, _action: AnyAction) {
+    function* aSaga (io: typeof IO, _action: AnyAction): Generator<CallEffect<unknown>, any, unknown> {
       const result = yield call(io.echo, 'A message')
 
       return result
