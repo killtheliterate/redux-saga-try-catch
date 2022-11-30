@@ -1,3 +1,12 @@
+## [2.2.10](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.9...v2.2.10) (2022-11-30)
+
+
+### chore
+
+* **deps-dev:** bump rollup from 2.79.1 to 3.5.0 ([af32fdc](https://github.com/killtheliterate/redux-saga-try-catch/commit/af32fdcb21d1b041aefb0a5daa9bd72419f4a501))
+* update test ([db95ad7](https://github.com/killtheliterate/redux-saga-try-catch/commit/db95ad7276869e338372a036d81b92d3b6b91ab5))
+* update test ([9ffa1bd](https://github.com/killtheliterate/redux-saga-try-catch/commit/9ffa1bd7ad954725df8d263e7e2572415caaa757))
+
 ## [2.2.9](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.8...v2.2.9) (2022-11-30)
 
 
