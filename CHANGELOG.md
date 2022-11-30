@@ -1,3 +1,12 @@
+## [2.2.11](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.10...v2.2.11) (2022-11-30)
+
+
+### chore
+
+* bump lint ([0094982](https://github.com/killtheliterate/redux-saga-try-catch/commit/0094982a782c40dbf604fd123da53a9f02d8bebd))
+* bump lint ([273608c](https://github.com/killtheliterate/redux-saga-try-catch/commit/273608c7b3c969bdf26d968f532bbc6fa3057132))
+* **deps-dev:** bump typescript from 3.9.10 to 4.9.3 ([3d7a49a](https://github.com/killtheliterate/redux-saga-try-catch/commit/3d7a49a2a8a9519f2e0fe4c68ca7b3069e11b32b))
+
 ## [2.2.10](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.9...v2.2.10) (2022-11-30)
 
 
