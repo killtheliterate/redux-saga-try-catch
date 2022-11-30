@@ -1,5 +1,5 @@
 import { SagaIterator } from 'redux-saga'
-import { call } from 'redux-saga/effects'
+import { call, CallEffect } from 'redux-saga/effects'
 import { isEmpty } from 'lodash/fp'
 
 // ---------------------------------------------------------------------------
@@ -48,7 +48,7 @@ export function standardAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
 }
 
 export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
-  return function* withCatch (action: A & DeferredAction) {
+  return function* withCatch (action: A & DeferredAction): Generator<CallEffect<any>, void, unknown> {
     const { stdout } = io
     const { meta: { deferred, ...restMeta }, ...rest } = action
 
