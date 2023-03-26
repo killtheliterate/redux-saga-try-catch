@@ -1,21 +1,19 @@
 {
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"],
+
   "compilerOptions": {
     "baseUrl": "./",
     "esModuleInterop": true,
+    "lib": ["es6", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "sourceMap": false,
     "strict": true,
-    "target": "es5",
-
-    "lib": ["es5", "esnext"],
+    "target": "es6",
 
     "paths": {
       "@/*": ["src/*"]
     }
-  },
-
-  "exclude": ["node_modules"],
-
-  "include": ["src/**/*.ts"]
+  }
 }

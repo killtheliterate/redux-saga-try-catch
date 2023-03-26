@@ -1,3 +1,3 @@
-export { deferredAction } from "./deferred";
-export { standardAction } from "./standard";
-export * from "./utils";
+export * from './utils'
+export { deferredAction, typedDeferredAction } from './deferred'
+export { standardAction, typedStandardAction } from './standard'
