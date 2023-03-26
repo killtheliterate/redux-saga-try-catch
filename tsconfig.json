@@ -8,21 +8,14 @@
     "strict": true,
     "target": "es5",
 
-    "lib": [
-      "es5",
-      "esnext"
-    ],
+    "lib": ["es5", "esnext"],
 
     "paths": {
       "@/*": ["src/*"]
     }
   },
 
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
 
-  "include": [ 
-    "src/**/*.ts" 
-  ]
+  "include": ["src/**/*.ts"]
 }

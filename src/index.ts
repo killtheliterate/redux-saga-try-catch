@@ -1,5 +1,2 @@
-import * as Catch from './catch'
-
-export const deferredAction = Catch.deferredAction
-export const standardAction = Catch.standardAction
-export default Catch
+export { deferredAction } from "./deferred";
+export { standardAction } from "./standard";
