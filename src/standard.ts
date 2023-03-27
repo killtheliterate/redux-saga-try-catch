@@ -2,11 +2,11 @@ import * as Utils from './utils'
 import { call as tCall } from 'typed-redux-saga'
 import { call } from 'redux-saga/effects'
 
-export function standardAction<T extends Utils.StdOut, A>(
-  saga: Utils.Saga<T, A>,
-  io: T
-) {
-  return function* withCatch(action: A & Utils.StandardAction) {
+export function standardAction<
+  T extends Utils.StdOut,
+  A extends Utils.StandardAction
+>(saga: Utils.Saga<T, A>, io: T) {
+  return function* withCatch(action: A) {
     const { stdout } = io
 
     try {
@@ -20,14 +20,14 @@ export function standardAction<T extends Utils.StdOut, A>(
 export function typedStandardAction<
   T extends Utils.StdOut,
   A extends Utils.StandardAction
->(generator: Utils.TypedSaga<T, A>, io: T) {
+>(saga: Utils.Saga<T, A>, io: T) {
   return function* withCatch(action: A) {
     const { stdout } = io
 
     try {
-      yield* tCall(generator, io, action)
+      yield* tCall(saga, io, action)
     } catch (err) {
-      yield* tCall(stdout, `${generator.name}`, err)
+      yield* tCall(stdout, `${saga.name}`, err)
     }
   }
 }
