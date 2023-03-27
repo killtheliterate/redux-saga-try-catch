@@ -9,6 +9,7 @@ export function deferredAction<T extends Utils.StdOut, A>(
 ) {
   return function* withCatch(
     action: A & Utils.DeferredAction
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ): Generator<CallEffect<any>, void, unknown> {
     const { stdout } = io;
     const {
