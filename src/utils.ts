@@ -14,12 +14,16 @@ export type DeferredAction = {
 
   meta: Record<string, unknown> & {
     deferred: {
-      failure: (...args: unknown[]) => void;
-      success: (...args: unknown[]) => void;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      failure: (...args: any[]) => void;
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      success: (...args: any[]) => void;
     };
   };
 };
 
-export type StdOut = { stdout: (...args: unknown[]) => void };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type StdOut = { stdout: (...args: any[]) => void };
 
 export type Saga<T, A> = (io: T, action: A) => SagaIterator;
