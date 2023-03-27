@@ -1,3 +1,11 @@
+## [3.0.1](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.0.0...v3.0.1) (2023-03-27)
+
+
+### fix
+
+* export utility types again ([9bb2080](https://github.com/killtheliterate/redux-saga-try-catch/commit/9bb2080e52c5fd77186c9438129cb496cdbfdc94))
+* export utility types again ([d99b6df](https://github.com/killtheliterate/redux-saga-try-catch/commit/d99b6dfc29323a29d62b812daf76fe7a9c18915d))
+
 # [3.0.0](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.12...v3.0.0) (2023-03-27)
 
 
