@@ -46,7 +46,7 @@ export function typedDeferredAction<
     const { stdout } = io
 
     try {
-      const result = yield* tCall(generator, io, action)
+      const result = yield call(generator, io, action)
 
       yield* tCall(action.meta.deferred.success, result)
     } catch (err) {
