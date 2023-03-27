@@ -1,3 +1,40 @@
+# [3.0.0](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.12...v3.0.0) (2023-03-27)
+
+
+### chore
+
+* **deps-dev:** bump [@babel](https://github.com/babel)/preset-typescript from 7.18.6 to 7.21.0 ([644dd41](https://github.com/killtheliterate/redux-saga-try-catch/commit/644dd411ef6b859543f0ecfa304fd37dc583e6ab))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin ([65600df](https://github.com/killtheliterate/redux-saga-try-catch/commit/65600dfd6c775f5bb31efe4a37ee793bd7867c55))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin ([6071977](https://github.com/killtheliterate/redux-saga-try-catch/commit/607197727a12e082292a08e49985b2d251e4687e))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 5.45.0 to 5.48.1 ([2bb392b](https://github.com/killtheliterate/redux-saga-try-catch/commit/2bb392b041a035474e7a9b8f165fc72f57499def))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 5.48.1 to 5.56.0 ([cb0af5d](https://github.com/killtheliterate/redux-saga-try-catch/commit/cb0af5d03dbcee962951f571b63651fcb849511a))
+* **deps-dev:** bump babel-loader from 9.1.0 to 9.1.2 ([f0f1ee7](https://github.com/killtheliterate/redux-saga-try-catch/commit/f0f1ee7d5023bbd7962912f6885fd78f7d48ffba))
+* **deps-dev:** bump eslint from 8.28.0 to 8.31.0 ([c230bb1](https://github.com/killtheliterate/redux-saga-try-catch/commit/c230bb1054a776ad80049557f13768382e2ad315))
+* **deps-dev:** bump eslint from 8.31.0 to 8.36.0 ([8d74418](https://github.com/killtheliterate/redux-saga-try-catch/commit/8d74418631546507a2238480cc793f84bc7cde88))
+* **deps-dev:** bump redux from 4.2.0 to 4.2.1 ([e160b8b](https://github.com/killtheliterate/redux-saga-try-catch/commit/e160b8b9cac5c8a36d2049dee96cbfaa5d657191))
+* **deps-dev:** bump redux-saga from 1.2.1 to 1.2.2 ([f204a2c](https://github.com/killtheliterate/redux-saga-try-catch/commit/f204a2c43fabdfb924b36ba0fe58c5d19234df60))
+* **deps-dev:** bump redux-saga from 1.2.2 to 1.2.3 ([520deca](https://github.com/killtheliterate/redux-saga-try-catch/commit/520decaa925367b6982c1f1f58c234d7986deea2))
+* **deps-dev:** bump rollup from 3.20.0 to 3.20.2 ([f9e7ea7](https://github.com/killtheliterate/redux-saga-try-catch/commit/f9e7ea7da473e59eacabdc326530f67f42f289b2))
+* **deps-dev:** bump rollup from 3.5.1 to 3.9.1 ([bdf9837](https://github.com/killtheliterate/redux-saga-try-catch/commit/bdf98379c2f9bc515e13be1a33cf106693066a29))
+* **deps-dev:** bump rollup from 3.9.1 to 3.20.0 ([e676610](https://github.com/killtheliterate/redux-saga-try-catch/commit/e676610ea110bb600902525a92e875167f82304a))
+* **deps-dev:** bump semantic-release from 19.0.5 to 20.1.3 ([661ecd6](https://github.com/killtheliterate/redux-saga-try-catch/commit/661ecd6bc3cd315541d87995a5e256501783f0e7))
+* **deps-dev:** bump semantic-release from 20.1.3 to 21.0.0 ([a3319b6](https://github.com/killtheliterate/redux-saga-try-catch/commit/a3319b61283fd866976ae835315855df6bae7009))
+* **deps-dev:** bump typescript from 4.9.3 to 4.9.4 ([f9ed786](https://github.com/killtheliterate/redux-saga-try-catch/commit/f9ed786b3797d234e0ce86f9148871f056080b00))
+* **deps-dev:** bump typescript from 4.9.4 to 5.0.2 ([5855e1f](https://github.com/killtheliterate/redux-saga-try-catch/commit/5855e1fd3422dce7c4caf95a0cbb5b561ce626f3))
+* **deps:** bump decode-uri-component from 0.2.0 to 0.2.2 ([9129987](https://github.com/killtheliterate/redux-saga-try-catch/commit/91299877d9ffd34222ce3243865e22f24d504023))
+* **deps:** bump webpack from 5.75.0 to 5.76.1 ([1420a4a](https://github.com/killtheliterate/redux-saga-try-catch/commit/1420a4af652ef5e9dcf0769945171e6c17d06a2d))
+
+
+### feat
+
+* re-organize project structure ([98e5f9c](https://github.com/killtheliterate/redux-saga-try-catch/commit/98e5f9c18640eb7e189d0bc8ee7b8a1b332c4823))
+* re-organize project structure ([f3bcc3c](https://github.com/killtheliterate/redux-saga-try-catch/commit/f3bcc3c1a7795b220e6e55bcf31ee0cae220fed3))
+
+
+### Breaking changes
+
+* eliminate "default" export
+
 ## [2.2.12](https://github.com/killtheliterate/redux-saga-try-catch/compare/v2.2.11...v2.2.12) (2022-12-01)
 
 
