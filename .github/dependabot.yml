@@ -1,29 +1,29 @@
 version: 2
 updates:
-- package-ecosystem: npm
+  - package-ecosystem: npm
 
-  directory: "/"
-  
-  schedule:
-    interval: monthly
-    
-  open-pull-requests-limit: 10
-  
-  assignees:
-  - killtheliterate
+    directory: '/'
 
-  reviewers:
-  - killtheliterate
+    schedule:
+      interval: monthly
 
-- package-ecosystem: github-actions
+    open-pull-requests-limit: 10
 
-  directory: "/"
+    assignees:
+      - killtheliterate
 
-  schedule:
-    interval: daily
+    reviewers:
+      - killtheliterate
 
-  assignees:
-  - killtheliterate
+  - package-ecosystem: github-actions
 
-  reviewers:
-  - killtheliterate
+    directory: '/'
+
+    schedule:
+      interval: daily
+
+    assignees:
+      - killtheliterate
+
+    reviewers:
+      - killtheliterate

@@ -1,14 +1,10 @@
 {
   "extends": "./tsconfig",
+  "exclude": ["node_modules", "src/__tests__/*"],
 
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "dist/dts",
     "emitDeclarationOnly": true
-  },
-
-  "exclude": [
-    "node_modules",
-    "src/__tests__/*"
-  ]
+  }
 }
