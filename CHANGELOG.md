@@ -1,3 +1,11 @@
+## [3.0.2](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.0.1...v3.0.2) (2023-03-27)
+
+
+### fix
+
+* replace "unknown" with "any" :( ([dcafa63](https://github.com/killtheliterate/redux-saga-try-catch/commit/dcafa63d1e90b5e74d640085124f9c10b97dd14b))
+* replace "unknown" with "any" :( ([593a6e2](https://github.com/killtheliterate/redux-saga-try-catch/commit/593a6e2a489c3fd6ec2b7c26b88c8a050fe40f3b))
+
 ## [3.0.1](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.0.0...v3.0.1) (2023-03-27)
 
 
