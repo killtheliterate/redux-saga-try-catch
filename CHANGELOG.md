@@ -1,3 +1,11 @@
+# [3.1.0](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.0.2...v3.1.0) (2023-03-27)
+
+
+### feat
+
+* add typed-redux-saga ([f9a3d45](https://github.com/killtheliterate/redux-saga-try-catch/commit/f9a3d45882a94f44f3676d8a449ccd08dfecacba))
+* add typed-redux-saga ([0eaf6f5](https://github.com/killtheliterate/redux-saga-try-catch/commit/0eaf6f547fa7786134dd1f7689013accd7aa996a))
+
 ## [3.0.2](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.0.1...v3.0.2) (2023-03-27)
 
 
