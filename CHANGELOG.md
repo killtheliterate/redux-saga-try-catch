@@ -1,3 +1,16 @@
+# [4.0.0](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.1.1...v4.0.0) (2023-03-28)
+
+
+### fix
+
+* simplify types a bit ([d70530e](https://github.com/killtheliterate/redux-saga-try-catch/commit/d70530e31a559861d53b4238c982cd76fd0f1408))
+* simplify types a bit ([57b853a](https://github.com/killtheliterate/redux-saga-try-catch/commit/57b853ac64a2f4b5895beeb22cf1a23340aa7d43))
+
+
+### Breaking changes
+
+* forward entire action to passed saga
+
 ## [3.1.1](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.1.0...v3.1.1) (2023-03-28)
 
 
