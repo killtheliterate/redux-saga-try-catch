@@ -1,3 +1,13 @@
+## [3.1.1](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.1.0...v3.1.1) (2023-03-28)
+
+
+### chore
+
+* **deps-dev:** bump [@types](https://github.com/types)/lodash from 4.14.191 to 4.14.192 ([b0bd210](https://github.com/killtheliterate/redux-saga-try-catch/commit/b0bd2106e40464a5ba84d0151463b6f637bcd6d0))
+* **deps-dev:** bump [@types](https://github.com/types)/lodash from 4.14.191 to 4.14.192 ([68293fa](https://github.com/killtheliterate/redux-saga-try-catch/commit/68293faa0addc707102ecfaa96a28ca95cda2426))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin ([5d4a4c2](https://github.com/killtheliterate/redux-saga-try-catch/commit/5d4a4c2aad3c8da3ed57846b72cef0707f87df01))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 5.56.0 to 5.57.0 ([f21952c](https://github.com/killtheliterate/redux-saga-try-catch/commit/f21952ce2fca4dc196edfe92d0deb96047f45927))
+
 # [3.1.0](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.0.2...v3.1.0) (2023-03-27)
 
 
