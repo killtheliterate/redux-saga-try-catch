@@ -7,12 +7,12 @@ import {
   typedDeferredAction as deferredAction,
 } from '../index'
 
-describe.only('typedStandardAction()', () => {
+describe('typedStandardAction()', () => {
   it('yields to the passed generator', () => {
     const IO = { stdout: jest.fn() }
 
     function* aSaga(io: typeof IO, action: AnyAction) {
-      return call(io.stdout, action.type)
+      yield call(io.stdout, action.type)
     }
 
     const iterator = standardAction(aSaga, IO)({ type: 'AN_ACTION' })

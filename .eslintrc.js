@@ -25,7 +25,6 @@ module.exports = {
   rules: {
     // eslint
     'comma-dangle': 'off',
-    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
 
     // typescript
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -42,6 +41,10 @@ module.exports = {
 
       parserOptions: {
         project: null,
+      },
+
+      rules: {
+        'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       },
     },
   ],

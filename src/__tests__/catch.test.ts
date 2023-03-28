@@ -4,14 +4,11 @@ import { call, CallEffect } from 'redux-saga/effects'
 import { deferredAction, standardAction } from '../index'
 
 describe('standardAction()', () => {
-  it('yields to the passed generator', () => {
-    const IO = { stdout: (..._args: unknown[]) => undefined }
+  const IO = { stdout: jest.fn() }
 
-    function* aSaga(
-      io: typeof IO,
-      action: AnyAction
-    ): Generator<CallEffect<undefined>, unknown, unknown> {
-      return yield call(io.stdout, action.type)
+  it('yields to the passed generator', () => {
+    function* aSaga(io: typeof IO, action: { type: string }) {
+      yield call(io.stdout, action.type)
     }
 
     const iterator = standardAction(aSaga, IO)({ type: 'AN_ACTION' })
@@ -22,8 +19,6 @@ describe('standardAction()', () => {
   })
 
   it('catches if the delegate saga throws', () => {
-    const IO = { stdout: (..._args: unknown[]) => undefined }
-
     function* aSaga(_io: typeof IO, _action: AnyAction) {
       throw new Error('oops')
     }
@@ -42,12 +37,14 @@ describe('standardAction()', () => {
 })
 
 describe('deferredAction()', () => {
-  it('yields to the passed generator', () => {
-    const IO = {
-      stdout: () => undefined,
-      echo: (msg: unknown) => msg,
-    }
+  const IO = {
+    echo: <T>(msg: T) => msg,
+    sayNum: (num: number) => num,
+    sayStr: (str: string) => str,
+    stdout: jest.fn(),
+  }
 
+  it('yields to the passed generator', () => {
     const action = {
       type: 'AN_ACTION',
       meta: {
@@ -58,32 +55,22 @@ describe('deferredAction()', () => {
       },
     }
 
-    function* aSaga(
-      io: typeof IO,
-      _action: AnyAction
-    ): Generator<CallEffect<unknown>, unknown, unknown> {
-      const result = yield call(io.echo, 'A message')
-
-      return result
+    function* aSaga(io: typeof IO, _action: AnyAction) {
+      yield call(io.sayNum, 123)
+      yield call(io.sayStr, 'hello')
     }
 
+    // This generator is *not* "aSaga", but instead the wrapper saga
     const iterator = deferredAction(aSaga, IO)(action)
 
-    expect(iterator.next().value).toEqual(
-      call(aSaga, IO, { type: 'AN_ACTION' })
-    )
+    expect(iterator.next().value).toEqual(call(aSaga, IO, action))
 
-    expect(iterator.next('A message').value).toEqual(
-      call(action.meta.deferred.success, 'A message')
+    expect(iterator.next('yielded').value).toEqual(
+      call(action.meta.deferred.success, 'yielded')
     )
   })
 
   it('catches if the delegate saga throws', () => {
-    const IO = {
-      stdout: (..._args: unknown[]) => undefined,
-      echo: (msg: unknown) => msg,
-    }
-
     const action = {
       type: 'AN_ACTION',
       meta: {
@@ -100,9 +87,7 @@ describe('deferredAction()', () => {
 
     const iterator = deferredAction(aSaga, IO)(action)
 
-    expect(iterator.next().value).toEqual(
-      call(aSaga, IO, { type: 'AN_ACTION' })
-    )
+    expect(iterator.next().value).toEqual(call(aSaga, IO, action))
 
     expect(iterator.throw(Error('welp...')).value).toEqual(
       call(IO.stdout, 'aSaga', Error('welp...'))
@@ -114,11 +99,6 @@ describe('deferredAction()', () => {
   })
 
   it('passes the rest of meta', () => {
-    const IO = {
-      stdout: (..._args: unknown[]) => undefined,
-      echo: (msg: unknown) => msg,
-    }
-
     const action = {
       type: 'AN_ACTION',
       meta: {
@@ -133,7 +113,7 @@ describe('deferredAction()', () => {
     function* aSaga(
       io: typeof IO,
       _action: AnyAction
-    ): Generator<CallEffect<unknown>, unknown, unknown> {
+    ): Generator<CallEffect<unknown>> {
       const result = yield call(io.echo, 'A message')
 
       return result
@@ -141,12 +121,7 @@ describe('deferredAction()', () => {
 
     const iterator = deferredAction(aSaga, IO)(action)
 
-    expect(iterator.next().value).toEqual(
-      call(aSaga, IO, {
-        type: 'AN_ACTION',
-        meta: { foobat: 'hey' },
-      })
-    )
+    expect(iterator.next().value).toEqual(call(aSaga, IO, action))
 
     expect(iterator.next('A message').value).toEqual(
       call(action.meta.deferred.success, 'A message')
