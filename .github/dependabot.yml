@@ -4,6 +4,11 @@ updates:
 
     directory: '/'
 
+    groups:
+      patches:
+        update-types:
+          - 'patch'
+
     schedule:
       interval: monthly
 
