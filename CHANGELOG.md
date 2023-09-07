@@ -1,3 +1,43 @@
+## [4.0.1](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.0...v4.0.1) (2023-09-07)
+
+
+### chore
+
+* **deps-dev:** bump [@babel](https://github.com/babel)/preset-typescript from 7.21.0 to 7.21.4 ([c1637ac](https://github.com/killtheliterate/redux-saga-try-catch/commit/c1637ac8324b518260152e38445e80f41c9a606b))
+* **deps-dev:** bump [@babel](https://github.com/babel)/preset-typescript from 7.21.4 to 7.22.5 ([98f878c](https://github.com/killtheliterate/redux-saga-try-catch/commit/98f878cfe6dac1a16c5392b5cea762acf4793f11))
+* **deps-dev:** bump [@babel](https://github.com/babel)/preset-typescript from 7.22.5 to 7.22.11 ([649846d](https://github.com/killtheliterate/redux-saga-try-catch/commit/649846d488b24f40edaa340ce7514d7ecfcaa319))
+* **deps-dev:** bump [@rollup](https://github.com/rollup)/plugin-node-resolve from 15.0.1 to 15.1.0 ([038ccfd](https://github.com/killtheliterate/redux-saga-try-catch/commit/038ccfdd7d13f6690156ffe955c474e09de41481))
+* **deps-dev:** bump [@rollup](https://github.com/rollup)/plugin-node-resolve from 15.1.0 to 15.2.1 ([8e84138](https://github.com/killtheliterate/redux-saga-try-catch/commit/8e841389d960694b224b232988fbbef3112e1b61))
+* **deps-dev:** bump [@types](https://github.com/types)/estree from 1.0.0 to 1.0.1 ([2c5b03a](https://github.com/killtheliterate/redux-saga-try-catch/commit/2c5b03a54eb787dffd113ba1261aaf29140a5350))
+* **deps-dev:** bump [@types](https://github.com/types)/lodash from 4.14.192 to 4.14.195 ([071e7b3](https://github.com/killtheliterate/redux-saga-try-catch/commit/071e7b32c80e15b1096583a1973b1edaa561c1da))
+* **deps-dev:** bump [@types](https://github.com/types)/lodash from 4.14.195 to 4.14.197 ([6826e19](https://github.com/killtheliterate/redux-saga-try-catch/commit/6826e191b46ccf13ea50c98909c952287cd808d6))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin ([ed7d240](https://github.com/killtheliterate/redux-saga-try-catch/commit/ed7d240931508689d78edf9554578fbca1ad0b50))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 5.57.0 to 5.61.0 ([a58cda5](https://github.com/killtheliterate/redux-saga-try-catch/commit/a58cda51bd6a8710e72cf1d5538631245cf1bd7a))
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/parser from 5.61.0 to 5.62.0 ([0d5c313](https://github.com/killtheliterate/redux-saga-try-catch/commit/0d5c313b083277e76cc07922efef7f4856bc5736))
+* **deps-dev:** bump babel-loader from 9.1.2 to 9.1.3 ([726727c](https://github.com/killtheliterate/redux-saga-try-catch/commit/726727c5198b1e9ae908c63e10cb08469913828f))
+* **deps-dev:** bump eslint and [@types](https://github.com/types)/eslint ([80195a4](https://github.com/killtheliterate/redux-saga-try-catch/commit/80195a4c47e4ab35370a7d8fbabf0a72de91e9be))
+* **deps-dev:** bump eslint and [@types](https://github.com/types)/eslint ([5feefe5](https://github.com/killtheliterate/redux-saga-try-catch/commit/5feefe5c8281b4fad357c0a94c2431427ddc00b1))
+* **deps-dev:** bump eslint from 8.36.0 to 8.37.0 ([6c80329](https://github.com/killtheliterate/redux-saga-try-catch/commit/6c80329f83a7165b9ec10e6e21854326f06e56e0))
+* **deps-dev:** bump eslint from 8.46.0 to 8.48.0 ([7d91d87](https://github.com/killtheliterate/redux-saga-try-catch/commit/7d91d8743407a066cdbc94c772a533e9d8308851))
+* **deps-dev:** bump eslint-config-prettier from 8.8.0 to 8.9.0 ([fbf9973](https://github.com/killtheliterate/redux-saga-try-catch/commit/fbf9973bcbab136caa797a04e7246d71aeeda147))
+* **deps-dev:** bump jest and [@types](https://github.com/types)/jest ([3e1b204](https://github.com/killtheliterate/redux-saga-try-catch/commit/3e1b2045f89852cfa39b7f0821ab44dc12e6f773))
+* **deps-dev:** bump jest and [@types](https://github.com/types)/jest ([f1675a9](https://github.com/killtheliterate/redux-saga-try-catch/commit/f1675a9a39e9bdf7fb831ee41b5efe662ff21ead))
+* **deps-dev:** bump rollup from 3.20.2 to 3.28.0 ([b85ea11](https://github.com/killtheliterate/redux-saga-try-catch/commit/b85ea116d9f8a8946678445de4b641d954c6070e))
+* **deps-dev:** bump rollup from 3.28.0 to 3.28.1 ([abbf4c2](https://github.com/killtheliterate/redux-saga-try-catch/commit/abbf4c22b09b3ba0e38815568e029699f7cae735))
+* **deps-dev:** bump semantic-release from 21.0.0 to 21.0.7 ([e981b53](https://github.com/killtheliterate/redux-saga-try-catch/commit/e981b530358b733ed8c8a949ffb6490500b5bb08))
+* **deps-dev:** bump semantic-release from 21.0.7 to 21.1.1 ([1bb5534](https://github.com/killtheliterate/redux-saga-try-catch/commit/1bb5534fed84844e5ac741c984d0498ed9ff811d))
+* **deps-dev:** bump typescript from 5.0.2 to 5.0.3 ([749bd05](https://github.com/killtheliterate/redux-saga-try-catch/commit/749bd056787ab114dea8f1534780516a0f20acac))
+* **deps-dev:** bump typescript from 5.0.3 to 5.1.6 ([aa04a96](https://github.com/killtheliterate/redux-saga-try-catch/commit/aa04a964cdf67fd039c598193de32adc83fb99df))
+* **deps-dev:** bump typescript from 5.1.6 to 5.2.2 ([fe8ebe7](https://github.com/killtheliterate/redux-saga-try-catch/commit/fe8ebe7964aae86610dae544d882f04ea1fde275))
+* **deps:** bump actions/checkout from 3 to 4 ([10f09e6](https://github.com/killtheliterate/redux-saga-try-catch/commit/10f09e6e94422462bdd518a65c68904a9e5aff32))
+* **deps:** bump tough-cookie, jest, npm and ts-jest ([cba1581](https://github.com/killtheliterate/redux-saga-try-catch/commit/cba1581df042a6fb4b5212ab70f6346ffe0909b4))
+
+
+### ci
+
+* **dependabot:** actually change dependabot.yaml ([8bc82cb](https://github.com/killtheliterate/redux-saga-try-catch/commit/8bc82cb4b716658cc3a21c4dd7bd48ee4c31e06c))
+* **dependabot:** actually change dependabot.yaml ([d8a94d5](https://github.com/killtheliterate/redux-saga-try-catch/commit/d8a94d52955adfb636a321be0ba166baa961e586))
+
 # [4.0.0](https://github.com/killtheliterate/redux-saga-try-catch/compare/v3.1.1...v4.0.0) (2023-03-28)
 
 
