@@ -1,3 +1,19 @@
+## [4.0.2](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.1...v4.0.2) (2023-10-20)
+
+
+### chore
+
+* **deps-dev:** bump [@babel](https://github.com/babel)/preset-typescript from 7.22.15 to 7.23.0 ([36d6c23](https://github.com/killtheliterate/redux-saga-try-catch/commit/36d6c23c628d6b459c9897a3c29eeb11c395c62d))
+* **deps-dev:** bump [@babel](https://github.com/babel)/traverse from 7.22.8 to 7.23.2 ([43c269c](https://github.com/killtheliterate/redux-saga-try-catch/commit/43c269cb57b8d5a64aa328eb5156f03d25ab12ac))
+* **deps-dev:** bump eslint and [@types](https://github.com/types)/eslint ([4c8dd3b](https://github.com/killtheliterate/redux-saga-try-catch/commit/4c8dd3b2c324e85b4706654c3b0dc2f965b0207f))
+* **deps-dev:** bump eslint and [@types](https://github.com/types)/eslint ([d3a0e60](https://github.com/killtheliterate/redux-saga-try-catch/commit/d3a0e602c21419a6d5c811ab6246a04ab63be43c))
+* **deps-dev:** bump jest and [@types](https://github.com/types)/jest ([1e39c22](https://github.com/killtheliterate/redux-saga-try-catch/commit/1e39c222ceab737d7adfb5ef1b573afbafc04d48))
+* **deps-dev:** bump rollup from 3.28.1 to 3.29.0 ([4bdff16](https://github.com/killtheliterate/redux-saga-try-catch/commit/4bdff165b429f67464a3517495f4060f11d89b30))
+* **deps-dev:** bump semantic-release from 21.1.1 to 22.0.5 ([85f6ad8](https://github.com/killtheliterate/redux-saga-try-catch/commit/85f6ad8740a7a127a5dcb3ce60f5beda56cadc48))
+* **deps-dev:** bump the patches group with 2 updates ([cbda742](https://github.com/killtheliterate/redux-saga-try-catch/commit/cbda74270824cc37e4f0ed8f0cfe30c073a7df7a))
+* **deps-dev:** bump the patches group with 3 updates ([184877b](https://github.com/killtheliterate/redux-saga-try-catch/commit/184877b654a29c58b8ca15391f376ede8bc80633))
+* **deps-dev:** bump the patches group with 6 updates ([2a0ac63](https://github.com/killtheliterate/redux-saga-try-catch/commit/2a0ac630f1da08b7ec0ce824e9e40b4795877c63))
+
 ## [4.0.1](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.0...v4.0.1) (2023-09-07)
 
 
