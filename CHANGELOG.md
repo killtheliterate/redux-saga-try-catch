@@ -1,3 +1,12 @@
+## [4.0.3](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.2...v4.0.3) (2023-11-01)
+
+
+### chore
+
+* **deps-dev:** bump eslint from 8.51.0 to 8.52.0 ([2ec19de](https://github.com/killtheliterate/redux-saga-try-catch/commit/2ec19de5d1ee6777d9b42db70372fef6495a70cd))
+* **deps-dev:** bump the patches group with 3 updates ([e3ba278](https://github.com/killtheliterate/redux-saga-try-catch/commit/e3ba27875fbd3c99b98a3be008a0b7f5beeddcb7))
+* **deps:** bump actions/setup-node from 3 to 4 ([29c8ad3](https://github.com/killtheliterate/redux-saga-try-catch/commit/29c8ad3d18a30178f866be33e0473df3557b055f))
+
 ## [4.0.2](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.1...v4.0.2) (2023-10-20)
 
 
