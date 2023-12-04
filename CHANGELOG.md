@@ -1,3 +1,12 @@
+## [4.0.4](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.3...v4.0.4) (2023-12-04)
+
+
+### chore
+
+* **deps-dev:** bump eslint and [@types](https://github.com/types)/eslint ([7478235](https://github.com/killtheliterate/redux-saga-try-catch/commit/74782356df11c287ece217c4d087a7edf9d54bd7))
+* **deps-dev:** bump the patches group with 5 updates ([95433b1](https://github.com/killtheliterate/redux-saga-try-catch/commit/95433b14bcccfa2847decd3d28519f05c10b8a1c))
+* **deps-dev:** bump typescript from 5.2.2 to 5.3.2 ([e447213](https://github.com/killtheliterate/redux-saga-try-catch/commit/e44721309c622950fcdfbf95d88287c1f2db31ed))
+
 ## [4.0.3](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.2...v4.0.3) (2023-11-01)
 
 
