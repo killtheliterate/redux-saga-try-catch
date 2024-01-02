@@ -1,3 +1,13 @@
+## [4.0.5](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.4...v4.0.5) (2024-01-02)
+
+
+### chore
+
+* **deps-dev:** bump eslint and [@types](https://github.com/types)/eslint ([bdefd35](https://github.com/killtheliterate/redux-saga-try-catch/commit/bdefd35764b07ff12b00956f0d35909b91f7bb68))
+* **deps-dev:** bump eslint-config-prettier from 8.9.0 to 9.1.0 ([2126d12](https://github.com/killtheliterate/redux-saga-try-catch/commit/2126d1293641426e1059e24004449437dcabf0c9))
+* **deps-dev:** bump the patches group with 4 updates ([f7c295b](https://github.com/killtheliterate/redux-saga-try-catch/commit/f7c295badc66179154f83b6966874d64b2da7854))
+* **deps:** bump github/codeql-action from 2 to 3 ([673a9a7](https://github.com/killtheliterate/redux-saga-try-catch/commit/673a9a7cd77854c18862547dcc4ff3adabe3d03f))
+
 ## [4.0.4](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.3...v4.0.4) (2023-12-04)
 
 
