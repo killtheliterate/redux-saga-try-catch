@@ -1,3 +1,13 @@
+## [4.0.6](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.5...v4.0.6) (2024-04-03)
+
+
+### chore
+
+* **deps-dev:** bump [@typescript-eslint](https://github.com/typescript-eslint)/eslint-plugin ([7de70a1](https://github.com/killtheliterate/redux-saga-try-catch/commit/7de70a171d4af37ca78dfaee5a358aaabe8d4ee9))
+* **deps-dev:** bump redux-saga from 1.2.3 to 1.3.0 ([417f378](https://github.com/killtheliterate/redux-saga-try-catch/commit/417f378e321a393027e9153c4a34d794bacaab11))
+* **deps-dev:** bump semantic-release from 22.0.12 to 23.0.0 ([575d4b3](https://github.com/killtheliterate/redux-saga-try-catch/commit/575d4b3240a7fe51d06134c6cc9b27fd97732dbf))
+* **deps-dev:** bump the patches group with 3 updates ([19e9735](https://github.com/killtheliterate/redux-saga-try-catch/commit/19e9735873cff9a370e4c8dc2801b7cb2f5982ec))
+
 ## [4.0.5](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.4...v4.0.5) (2024-01-02)
 
 
