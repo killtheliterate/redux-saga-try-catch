@@ -1,6 +1,6 @@
 {
   "name": "redux-saga-try-catch",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "author": "Garrett Dawson",
   "description": "A saga utility to reduce flow control boilerplate",
   "homepage": "https://github.com/killtheliterate/redux-saga-try-catch",

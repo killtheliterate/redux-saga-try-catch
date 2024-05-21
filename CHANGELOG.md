@@ -1,3 +1,12 @@
+## [4.0.7](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.6...v4.0.7) (2024-05-21)
+
+
+### chore
+
+* **deps-dev:** bump [@babel](https://github.com/babel)/preset-typescript from 7.23.3 to 7.24.1 ([c679e03](https://github.com/killtheliterate/redux-saga-try-catch/commit/c679e03702e7b38fe1429e232a98e6c9e69b926c))
+* **deps-dev:** bump semantic-release in the patches group ([4077bc5](https://github.com/killtheliterate/redux-saga-try-catch/commit/4077bc5e3a723e3336b25d5cb8278a868def6f8f))
+* **deps-dev:** bump typescript from 5.3.3 to 5.4.5 ([6f6fb98](https://github.com/killtheliterate/redux-saga-try-catch/commit/6f6fb98ea76f0868a9f29b44904271802350c54b))
+
 ## [4.0.6](https://github.com/killtheliterate/redux-saga-try-catch/compare/v4.0.5...v4.0.6) (2024-04-03)
 
 
