@@ -8,8 +8,29 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/dts/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/killtheliterate/redux-saga-try-catch.git"
+  },
   "bugs": {
     "url": "https://github.com/killtheliterate/redux-saga-try-catch/issues"
+  },
+  "keywords": [
+    "redux-saga",
+    "redux"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c && npx tsc -p tsconfig-dist.json",
+    "build:watch": "npx rollup -c --watch",
+    "prepublishOnly": "npm run build",
+    "prepush": "npm run util:lint",
+    "test": "npm run type-check && npm run test:unit",
+    "test:unit": "jest",
+    "type-check": "tsc -p ./tsconfig.json --noEmit",
+    "util:lint": "./node_modules/.bin/eslint . --ext .ts,.tsx --ignore-pattern node_modules/ --ignore-pattern dist/"
+  },
+  "jest": {
+    "preset": "ts-jest"
   },
   "peerDependencies": {
     "lodash": "^4.17.21",
@@ -45,26 +66,5 @@
     "ts-jest": "^29.1.1",
     "typed-redux-saga": "^1.5.0",
     "typescript": "^5.0.2"
-  },
-  "jest": {
-    "preset": "ts-jest"
-  },
-  "keywords": [
-    "redux-saga",
-    "redux"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/killtheliterate/redux-saga-try-catch.git"
-  },
-  "scripts": {
-    "build": "rm -rf dist && rollup -c && npx tsc -p tsconfig-dist.json",
-    "build:watch": "npx rollup -c --watch",
-    "prepublishOnly": "npm run build",
-    "prepush": "npm run util:lint",
-    "test": "npm run type-check && npm run test:unit",
-    "test:unit": "jest",
-    "type-check": "tsc -p ./tsconfig.json --noEmit",
-    "util:lint": "./node_modules/.bin/eslint . --ext .ts,.tsx --ignore-pattern node_modules/ --ignore-pattern dist/"
   }
 }
