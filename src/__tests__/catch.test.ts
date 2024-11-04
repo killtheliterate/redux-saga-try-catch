@@ -19,6 +19,7 @@ describe('standardAction()', () => {
   })
 
   it('catches if the delegate saga throws', () => {
+    // eslint-disable-next-line require-yield
     function* aSaga(_io: typeof IO, _action: AnyAction) {
       throw new Error('oops')
     }
@@ -81,6 +82,7 @@ describe('deferredAction()', () => {
       },
     }
 
+    // eslint-disable-next-line require-yield
     function* aSaga(_io: typeof IO, _action: AnyAction) {
       throw new Error('welp...')
     }
@@ -116,6 +118,7 @@ describe('deferredAction()', () => {
     ): Generator<CallEffect<unknown>> {
       const result = yield call(io.echo, 'A message')
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return result
     }
 

@@ -14,7 +14,7 @@ const plugins = [
   ],
 ]
 
-module.exports = {
+export default {
   plugins,
   preset: 'angular',
 

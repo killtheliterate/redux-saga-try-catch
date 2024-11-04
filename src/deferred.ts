@@ -4,7 +4,7 @@ import { call, CallEffect } from 'redux-saga/effects'
 
 export function deferredAction<
   T extends Utils.StdOut,
-  A extends Utils.DeferredAction
+  A extends Utils.DeferredAction,
 >(saga: Utils.Saga<T, A>, io: T) {
   return function* withCatch(action: A): Generator<CallEffect> {
     const { stdout } = io
@@ -22,7 +22,7 @@ export function deferredAction<
 
 export function typedDeferredAction<
   T extends Utils.StdOut,
-  A extends Utils.DeferredAction
+  A extends Utils.DeferredAction,
 >(saga: Utils.Saga<T, A>, io: T) {
   return function* withCatch(action: A) {
     const { stdout } = io

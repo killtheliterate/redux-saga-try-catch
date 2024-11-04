@@ -4,7 +4,7 @@ import { call } from 'redux-saga/effects'
 
 export function standardAction<
   T extends Utils.StdOut,
-  A extends Utils.StandardAction
+  A extends Utils.StandardAction,
 >(saga: Utils.Saga<T, A>, io: T) {
   return function* withCatch(action: A) {
     const { stdout } = io
@@ -19,7 +19,7 @@ export function standardAction<
 
 export function typedStandardAction<
   T extends Utils.StdOut,
-  A extends Utils.StandardAction
+  A extends Utils.StandardAction,
 >(saga: Utils.Saga<T, A>, io: T) {
   return function* withCatch(action: A) {
     const { stdout } = io

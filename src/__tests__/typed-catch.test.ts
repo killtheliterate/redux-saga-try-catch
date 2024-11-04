@@ -25,6 +25,7 @@ describe('typedStandardAction()', () => {
   it('catches if the delegate saga throws', () => {
     const IO = { stdout: jest.fn() }
 
+    // eslint-disable-next-line require-yield
     function* aSaga(_io: typeof IO, _action: AnyAction) {
       throw new Error('oops')
     }
@@ -92,6 +93,7 @@ describe('typedDeferredAction()', () => {
       },
     }
 
+    // eslint-disable-next-line require-yield
     function* aSaga(_io: typeof IO, _action: typeof action) {
       throw new Error('welp...')
     }
